@@ -1,6 +1,6 @@
 {
   "name": "css-rn",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A css literal string tag for React-Native",
   "main": "build/index.js",
   "dependencies": {
