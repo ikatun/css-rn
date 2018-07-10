@@ -1,12 +1,12 @@
 # css-rn
 A css literal string tag for React-Native
 
-## installation
+## Installation
 ```
 npm i css-rn
 ```
 
-## usage
+## Usage
 ```
 import React, { Component } from 'react';
 import { AppRegistry, Text, View } from 'react-native';
