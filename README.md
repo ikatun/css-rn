@@ -43,8 +43,8 @@ export class LotsOfStyles extends Component {
 ```
 
 ## css-to-react-native
-css-rn uses https://github.com/styled-components/css-to-react-native to convert string to object. Check documentation there for more info
+css-rn uses https://github.com/styled-components/css-to-react-native to convert css strings to React-Native style objects. Check documentation there for more technical info.
 
 ## StyleSheet
 Literal tag `css` from `import { css } from 'rss-rn'` returns regular JS style objects.
-If you want `StyleSheet.create()`-ed variant of the style, use `styleSheet` string literal tag `import { styleSheet } from 'rss-rn'` instead
+If you want `StyleSheet.create()`-ed variant of the style, use `styleSheet` string literal tag `import { styleSheet } from 'rss-rn'` instead.
