@@ -47,4 +47,25 @@ css-rn uses https://github.com/styled-components/css-to-react-native to convert 
 
 ## StyleSheet
 Literal tag `css` from `import { css } from 'rss-rn'` returns regular JS style objects.
-If you want `StyleSheet.create()`-ed variant of the style, use `styleSheet` string literal tag `import { styleSheet } from 'rss-rn'` instead.
+If you want `StyleSheet.create()`-ed variant of the style, use `styleSheet` string literal tag instead:
+```
+...
+import { styleSheet } from 'rss-rn'
+...
+...
+
+const redStyle = styleSheet`
+  color: blue;
+  font-weight: bold;
+  font-size: 30;
+`;
+
+const bigBlueStyle = styleSheet`
+  color: blue;
+  font-weight: bold;
+  font-size: 30;
+`;
+
+// `redStyle` and `bigBlueStyle` are now StyleSheet.create()ed integers instead of StyleObjects
+...
+```
