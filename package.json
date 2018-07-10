@@ -1,0 +1,32 @@
+{
+  "name": "css-rn",
+  "version": "0.1.0",
+  "description": "A css literal string tag for React-Native",
+  "main": "build/index.js",
+  "dependencies": {
+    "css-to-react-native": "*",
+    "lodash": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "nnode": "^0.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikatun/css-rn.git"
+  },
+  "keywords": [
+    "react-native",
+    "css",
+    "stylesheet"
+  ],
+  "author": "Ivo Katunaric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikatun/css-rn/issues"
+  },
+  "homepage": "https://github.com/ikatun/css-rn#readme"
+}
