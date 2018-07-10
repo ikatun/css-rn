@@ -18,10 +18,13 @@ const redStyle = css`
   font-size: 30;
 `;
 
+const bigFontSize = 50;
+
+// variables can be used within css template
 const bigBlueStyle = css`
   color: blue;
   font-weight: bold;
-  font-size: 30;
+  font-size: ${fontSize};
 `;
 
 const redStyle = css`
@@ -33,9 +36,9 @@ export class LotsOfStyles extends Component {
     return (
       <View>
         <Text style={redStyle}>just red</Text>
-        <Text style={styles.bigblue}>just bigblue</Text>
-        <Text style={[styles.bigblue, styles.red]}>bigblue, then red</Text>
-        <Text style={[styles.red, styles.bigblue]}>red, then bigblue</Text>
+        <Text style={bigBlue}>just bigblue</Text>
+        <Text style={[bigBlue, redStyle]}>bigblue, then red</Text>
+        <Text style={[redStyle, bigBlue]}>red, then bigblue</Text>
       </View>
     );
   }
