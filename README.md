@@ -24,7 +24,7 @@ const bigFontSize = 50;
 const bigBlueStyle = css`
   color: blue;
   font-weight: bold;
-  font-size: ${fontSize};
+  font-size: ${bigFontSize};
 `;
 
 const redStyle = css`
