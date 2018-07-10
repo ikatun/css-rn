@@ -66,6 +66,6 @@ const bigBlueStyle = styleSheet`
   font-size: 30;
 `;
 
-// `redStyle` and `bigBlueStyle` are now StyleSheet.create()ed integers instead of StyleObjects
+// `redStyle` and `bigBlueStyle` are now StyleSheet.create()ed integers instead of style objects
 ...
 ```
