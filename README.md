@@ -7,7 +7,7 @@ npm i css-rn
 ```
 
 ## Usage
-```
+```react
 import React, { Component } from 'react';
 import { AppRegistry, Text, View } from 'react-native';
 import { css } from 'rss-rn'
@@ -51,7 +51,7 @@ css-rn uses https://github.com/styled-components/css-to-react-native to convert 
 ## StyleSheet
 Literal tag `css` from `import { css } from 'rss-rn'` returns regular JS style objects.
 If you want `StyleSheet.create()`-ed variant of the style, use `styleSheet` string literal tag instead:
-```
+```javascript
 ...
 import { styleSheet } from 'rss-rn'
 ...
