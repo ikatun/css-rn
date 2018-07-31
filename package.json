@@ -1,9 +1,10 @@
 {
   "name": "css-rn",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A css literal string tag for React-Native",
   "main": "build/index.js",
   "dependencies": {
+    "clean-deep": "^3.0.2",
     "css-to-react-native": "*",
     "lodash": "*",
     "react-native": "*"

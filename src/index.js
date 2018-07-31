@@ -1,6 +1,7 @@
 import { unzipWith, identity } from 'lodash';
 import { StyleSheet } from 'react-native';
 import transform from 'css-to-react-native';
+import cleanDeep from 'clean-deep';
 
 const trim = x => x.trim();
 const merge = (left, right) => (left === undefined ? '' : left) + (right === undefined ? '' : right);
@@ -13,7 +14,7 @@ function computeStyle(strings, args) {
     .filter(identity)
     .map(line => line.split(':').map(trim));
 
-  return transform(unzipped);
+  return cleanDeep(transform(unzipped));
 }
 
 export function css(strings, ...args) {

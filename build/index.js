@@ -14,6 +14,10 @@ var _cssToReactNative = require('css-to-react-native');
 
 var _cssToReactNative2 = _interopRequireDefault(_cssToReactNative);
 
+var _cleanDeep = require('clean-deep');
+
+var _cleanDeep2 = _interopRequireDefault(_cleanDeep);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var trim = function trim(x) {
@@ -28,7 +32,7 @@ function computeStyle(strings, args) {
     return line.split(':').map(trim);
   });
 
-  return (0, _cssToReactNative2.default)(unzipped);
+  return (0, _cleanDeep2.default)((0, _cssToReactNative2.default)(unzipped));
 }
 
 function css(strings) {
