@@ -6,6 +6,8 @@ import cleanDeep from 'clean-deep';
 const trim = x => x.trim();
 const merge = (left, right) => (left === undefined ? '' : left) + (right === undefined ? '' : right);
 
+const transformationsToSkip = ['borderRadius'];
+
 function computeStyle(strings, args) {
   const unzipped = unzipWith([strings, args], merge)
     .join('')
@@ -14,7 +16,7 @@ function computeStyle(strings, args) {
     .filter(identity)
     .map(line => line.split(':').map(trim));
 
-  return cleanDeep(transform(unzipped));
+  return cleanDeep(transform(unzipped, transformationsToSkip));
 }
 
 export function css(strings, ...args) {

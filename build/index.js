@@ -27,12 +27,14 @@ var merge = function merge(left, right) {
   return (left === undefined ? '' : left) + (right === undefined ? '' : right);
 };
 
+var transformationsToSkip = ['borderRadius'];
+
 function computeStyle(strings, args) {
   var unzipped = (0, _lodash.unzipWith)([strings, args], merge).join('').split(';').map(trim).filter(_lodash.identity).map(function (line) {
     return line.split(':').map(trim);
   });
 
-  return (0, _cleanDeep2.default)((0, _cssToReactNative2.default)(unzipped));
+  return (0, _cleanDeep2.default)((0, _cssToReactNative2.default)(unzipped, transformationsToSkip));
 }
 
 function css(strings) {
