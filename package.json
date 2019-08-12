@@ -6,11 +6,13 @@
   "dependencies": {
     "clean-deep": "^3.0.2",
     "css-to-react-native": "*",
-    "lodash": "*",
-    "react-native": "*"
+    "lodash": "*"
   },
   "devDependencies": {
     "nnode": "^0.1.0"
+  },
+  "peerDependencies": {
+    "react-native": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
