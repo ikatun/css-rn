@@ -40,7 +40,7 @@ function computeStyle(strings, args) {
         left = _ref2[0],
         right = _ref2[1];
 
-    return !(0, _lodash.isNil)(left) && !(0, _lodash.isNil)(right);
+    return !(0, _lodash.isNil)(left) || !(0, _lodash.isNil)(right);
   });
 
   return (0, _cleanDeep2.default)((0, _cssToReactNative2.default)(unzipped, transformationsToSkip));
