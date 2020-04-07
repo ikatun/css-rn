@@ -1,4 +1,4 @@
-import { unzipWith, identity } from 'lodash';
+import { unzipWith, identity, isNil } from 'lodash';
 import { StyleSheet } from 'react-native';
 import transform from 'css-to-react-native';
 import cleanDeep from 'clean-deep';
@@ -14,7 +14,8 @@ function computeStyle(strings, args) {
     .split(';')
     .map(trim)
     .filter(identity)
-    .map(line => line.split(':').map(trim));
+    .map(line => line.split(':').map(trim))
+    .filter(([left, right]) => !isNil(left) && !isNil(right));
 
   return cleanDeep(transform(unzipped, transformationsToSkip));
 }
