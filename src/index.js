@@ -1,4 +1,4 @@
-import { unzipWith, identity, isNil } from 'lodash';
+import { unzipWith, identity } from 'lodash';
 import { StyleSheet } from 'react-native';
 import transform from 'css-to-react-native';
 import cleanDeep from 'clean-deep';
@@ -8,6 +8,8 @@ const merge = (left, right) => (left === undefined ? '' : left) + (right === und
 
 const transformationsToSkip = ['borderRadius'];
 
+const isEmpty = value => value === '' || value === null || value === undefined;
+
 function computeStyle(strings, args) {
   const unzipped = unzipWith([strings, args], merge)
     .join('')
@@ -15,7 +17,7 @@ function computeStyle(strings, args) {
     .map(trim)
     .filter(identity)
     .map(line => line.split(':').map(trim))
-    .filter(([left, right]) => !isNil(left) || !isNil(right));
+    .filter(([left, right]) => !isEmpty(left) && !isEmpty(right));
 
   return cleanDeep(transform(unzipped, transformationsToSkip));
 }
