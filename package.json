@@ -1,22 +1,25 @@
 {
   "name": "css-rn",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A css literal string tag for React-Native",
   "main": "build/index.js",
   "dependencies": {
     "clean-deep": "^3.0.2",
     "css-to-react-native": "*",
+    "fast-memoize": "^2.5.2",
     "lodash": "*"
   },
   "devDependencies": {
-    "nnode": "^0.1.0"
+    "@types/lodash": "^4.14.149",
+    "@types/react-native": "^0.62.2",
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "react-native": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "nnode --transpile"
+    "build": "rm -rf build && tsc"
   },
   "repository": {
     "type": "git",

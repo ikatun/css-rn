@@ -1,7 +1,8 @@
 import { unzipWith, identity } from 'lodash';
-import { StyleSheet } from 'react-native';
+import { StyleSheet} from 'react-native';
 import transform from 'css-to-react-native';
 import cleanDeep from 'clean-deep';
+import memoize from 'fast-memoize';
 
 const trim = x => x.trim();
 const merge = (left, right) => (left === undefined ? '' : left) + (right === undefined ? '' : right);
@@ -22,7 +23,7 @@ function computeStyle(strings, args) {
   return cleanDeep(transform(unzipped, transformationsToSkip));
 }
 
-export function css(strings, ...args) {
+export function styleObject(strings, ...args) {
   return computeStyle(strings, args);
 }
 
@@ -30,4 +31,28 @@ export function styleSheet(strings, ...args) {
   return StyleSheet.create({
     style: computeStyle(strings, args),
   }).style;
+}
+
+let defaultStylingFunction = styleSheet;
+
+export function useStyleObject(shouldMemoize: boolean) {
+  if (shouldMemoize) {
+    defaultStylingFunction = memoize((...args) => (styleObject as any)(...args));
+  } else {
+    defaultStylingFunction = styleObject;
+  }
+}
+
+export function useStyleSheet(shouldMemoize: boolean) {
+  if (shouldMemoize) {
+    defaultStylingFunction = memoize((...args) => (styleSheet as any)(...args));
+  } else {
+    defaultStylingFunction = styleSheet;
+  }
+}
+
+useStyleSheet(true);
+
+export function css(strings, ...args) {
+  return defaultStylingFunction(strings, args);
 }

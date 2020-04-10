@@ -1,4 +1,4 @@
-import { css } from '../src/index';
+import { css } from '../src';
 
 console.log(css`
   border-radius: 30px;
